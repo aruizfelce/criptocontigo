@@ -1,11 +1,10 @@
 <?php
+    include("conexion.php");
+	
+    	$base=getPDO();
 
-	try{
-        //verifica si el usuario existe
-        $base = new PDO('mysql:host=localhost;dbname=criptocontigo','root','');
-      	$base->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-      	$base->exec("SET CHARACTER SET utf8");
-      	
+      if ($base) 
+        {
 	
         $sql = "SELECT * FROM usuarios WHERE idUsuario = :login AND password= :password";
 
@@ -35,8 +34,7 @@
             $_SESSION["nologin"] = "Id o password incorrectos"; 
             header("location:ingresar.php"); //redirige a la pagina login para que vuelva a colocar los datos
         }
-    }
-    catch(Exception $e){
-		die("Error: " . $e->getMessage());
+    }else{
+        echo "Hubo un error con la conexion";
     }
 ?>

@@ -38,11 +38,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="col-sm-6 d-flex align-self-center justify-content-center">
-                <br><br>
-                <img class="w-100" src="img/quees.png" >
-              </div> -->
-          
             
           </div>
         </div>
