@@ -1,5 +1,8 @@
 
-      <?php include 'encabezado.php'; ?>
+      <?php include 'encabezado.php'; 
+        session_start();
+        $_SESSION["existe"]=0;
+      ?>
       <div class="card text-center bg-dark text-warning mb-3">
         <div class="card-body">
           <br><br><br>

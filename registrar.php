@@ -1,5 +1,8 @@
 
-      <?php include 'encabezado.php'; ?>
+      <?php include 'encabezado.php'; 
+        
+        session_start();
+      ?>
 
       <div class="card text-center  bg-dark mb-3">
         <div class="card-body text-white">
@@ -47,9 +50,27 @@
                       </div>
                     </div>
                   </form>
+                  
                </div>   
-            </div>
+            
+              <div class="col-4">
+                  <?php
+                      if($_SESSION["existe"]==1) 
+                        {
+                  ?>       
+                          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                              Usuario ya existe
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div> 
+                  <?php    
+                         }
+                  ?>  
+                  
+              </div>  
             </div>  
+          </div>
     </div>
   </div>
     
