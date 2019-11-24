@@ -8,7 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css" >
     <link rel="stylesheet" href="css/estilos.css">
-
+   
+    
     <title>Cripto Contigo</title>
   </head>
   <body>
