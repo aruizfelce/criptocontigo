@@ -68,7 +68,7 @@
 
 			</tr>
 		</thead>
-		<?php foreach($registros as $preguntas)?>
+		<?php foreach($registros as $preguntas):?>
 		 <tbody>
 			<tr class="d-flex">
 				<!-- <td><?php echo $preguntas->idpregunta?></td>  -->

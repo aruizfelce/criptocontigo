@@ -24,10 +24,12 @@
         $arr = $resultado->fetch(PDO::FETCH_ASSOC);
         $nombreUsuario = $arr['nombre'] . " " . $arr['apellido'];
         $administrador= $arr['administrador'];
+        $Usuario= $arr['id'];
         
         if($numero_registros!=0){ //Si existe el usuario
             session_start();  //inicia la sesion asignando a la variable de sesion usuario el nombre del usuario
             $_SESSION["usuario"] = $nombreUsuario; 
+            $_SESSION["idusuario"] = $Usuario; 
             if ($administrador == 1)
                 $_SESSION["administrador"] = 1;
             else
