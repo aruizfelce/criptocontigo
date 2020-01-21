@@ -43,6 +43,18 @@
                         <input type="password" required maxlength="10" class="form-control" name="password" id="password" placeholder="Ingrese su Password">
                       </div>
                     </div>
+                    <div class="form-group row">
+                      <!-- <label for="tipo" class="col-sm-2 col-form-label">Tipo</label>
+                      <div class="col-sm-6">
+                        <select class="form-control" name="administrador">
+                          <option value="2">Seleccione</option>
+                          <option value="1">Profesor</option>
+                          <option value="0">Alumno</option>
+                        </select>
+                      </div> -->
+                      <input type="hidden" name="administrador" value="0">
+                    </div>
+
                     
                     <div class="form-group row">
                       <div class="col-sm-10">

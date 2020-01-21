@@ -6,6 +6,10 @@
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
     $password = $_POST["password"];
+    if($_POST["administrador"]==2)
+      $administrador=0;
+    else  
+      $administrador=$_POST["administrador"];
     
     include("conexion.php");
     
@@ -25,21 +29,33 @@
         $numero_registros=$resultado->rowCount(); 
 
         if ($numero_registros==0){
-          $sql = "INSERT INTO usuarios (idUsuario,cedula,nombre,apellido,password) 
-          VALUES (:idusuario,:cedula,:nombre,:apellido,:password)";
+          $sql = "INSERT INTO usuarios (idUsuario,cedula,nombre,apellido,password,administrador) 
+          VALUES (:idusuario,:cedula,:nombre,:apellido,:password,:administrador)";
 
           $resultado = $base->prepare($sql);
           $resultado->execute(array(":idusuario"=>$idUsuario, 
                                     ":cedula" => $cedula, 
                                     ":nombre"=>$nombre, 
                                     ":apellido"=>$apellido, 
-                                    ":password"=>$password                                  
+                                    ":password"=>$password,
+                                    ":administrador"=>$administrador                                     
                                     ));
           
           $resultado->closeCursor();
           
           session_start();  //al crear el usuario automáticamente queda logueado y va al menu
           $_SESSION["usuario"] = $nombre . " " . $apellido; 
+          $_SESSION["administrador"] = $administrador;
+          $_SESSION["idusuario"] = $idUsuario;
+         
+          //****
+          $sql="SELECT * FROM usuarios WHERE idUsuario = '$idUsuario'";
+          $resultado = $base->prepare($sql);
+          $resultado->execute();
+          $arr = $resultado->fetch(PDO::FETCH_ASSOC);
+          $_SESSION["idusuario"]= $arr['id'];
+          //*****
+
           header("location:menu.php");
         }
          else{ //si el usuario existe emite error

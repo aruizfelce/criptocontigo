@@ -8,16 +8,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css" >
     <link rel="stylesheet" href="css/estilos.css">
-   
+    <script src="//cdn.ckeditor.com/4.13.1/full/ckeditor.js"></script>
     
-    <title>Cripto Contigo</title>
+    <title>Capacitación a Distancia</title>
   </head>
   <body>
     
     <div class="container">
-        <div class="card text-center  bg-warning mb-3">
+    <div class="card text-center  bg-primary mb-3">
             <div class="card-body">
-            <a class="btn btn-warning btn-lg btn-block" href="index.php" role="button"><p class="display-1">Cripto Contigo</p></a>
+            <a class="btn btn-primary btn-lg btn-block" href="index.php" role="button"><p class="display-4">Capacitación a Distancia</p></a>
           </div>
           
         </div>
